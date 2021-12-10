@@ -20,3 +20,5 @@ Xcode 13
 [ResignTool](https://github.com/InjoyDeng/ResignTool)
 
 [SwiftShell](https://github.com/kareman/SwiftShell)
+
+[Annotating properties with default decoding values](https://www.swiftbysundell.com/tips/default-decoding-values/)
