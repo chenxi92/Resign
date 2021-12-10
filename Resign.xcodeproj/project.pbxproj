@@ -1,0 +1,419 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6CAADE5E276340D5002F1730 /* ResignApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAADE5D276340D5002F1730 /* ResignApp.swift */; };
+		6CAADE60276340D5002F1730 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAADE5F276340D5002F1730 /* ContentView.swift */; };
+		6CAADE62276340D6002F1730 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CAADE61276340D6002F1730 /* Assets.xcassets */; };
+		6CAADE65276340D6002F1730 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CAADE64276340D6002F1730 /* Preview Assets.xcassets */; };
+		6CAADE6E276340FF002F1730 /* AlertInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAADE6D276340FF002F1730 /* AlertInfo.swift */; };
+		6CAADE702763411A002F1730 /* NeumorphicButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAADE6F2763411A002F1730 /* NeumorphicButtonStyle.swift */; };
+		6CAADE722763412E002F1730 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAADE712763412E002F1730 /* Shell.swift */; };
+		6CAADE7627634186002F1730 /* ProvisioningProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAADE7527634186002F1730 /* ProvisioningProfile.swift */; };
+		6CAADE78276341AD002F1730 /* PropertyListDictionaryValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAADE77276341AD002F1730 /* PropertyListDictionaryValue.swift */; };
+		6CAADE7A276341BC002F1730 /* PropertyListProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAADE79276341BC002F1730 /* PropertyListProcessor.swift */; };
+		6CAADE7C276341D0002F1730 /* CertificateWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAADE7B276341D0002F1730 /* CertificateWrapper.swift */; };
+		6CAADE7E276341DD002F1730 /* ResignOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAADE7D276341DD002F1730 /* ResignOutput.swift */; };
+		6CAADE8027634285002F1730 /* InfoPlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAADE7F27634285002F1730 /* InfoPlist.swift */; };
+		6CAADE83276342AD002F1730 /* ResignViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAADE82276342AD002F1730 /* ResignViewModel.swift */; };
+		6CAADE85276342CD002F1730 /* ResignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAADE84276342CD002F1730 /* ResignView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6CAADE5A276340D5002F1730 /* Resign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Resign.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CAADE5D276340D5002F1730 /* ResignApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResignApp.swift; sourceTree = "<group>"; };
+		6CAADE5F276340D5002F1730 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6CAADE61276340D6002F1730 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6CAADE64276340D6002F1730 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6CAADE66276340D6002F1730 /* Resign.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Resign.entitlements; sourceTree = "<group>"; };
+		6CAADE6D276340FF002F1730 /* AlertInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertInfo.swift; sourceTree = "<group>"; };
+		6CAADE6F2763411A002F1730 /* NeumorphicButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphicButtonStyle.swift; sourceTree = "<group>"; };
+		6CAADE712763412E002F1730 /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
+		6CAADE7527634186002F1730 /* ProvisioningProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvisioningProfile.swift; sourceTree = "<group>"; };
+		6CAADE77276341AD002F1730 /* PropertyListDictionaryValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListDictionaryValue.swift; sourceTree = "<group>"; };
+		6CAADE79276341BC002F1730 /* PropertyListProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListProcessor.swift; sourceTree = "<group>"; };
+		6CAADE7B276341D0002F1730 /* CertificateWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificateWrapper.swift; sourceTree = "<group>"; };
+		6CAADE7D276341DD002F1730 /* ResignOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResignOutput.swift; sourceTree = "<group>"; };
+		6CAADE7F27634285002F1730 /* InfoPlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPlist.swift; sourceTree = "<group>"; };
+		6CAADE82276342AD002F1730 /* ResignViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResignViewModel.swift; sourceTree = "<group>"; };
+		6CAADE84276342CD002F1730 /* ResignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResignView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6CAADE57276340D5002F1730 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6CAADE51276340D5002F1730 = {
+			isa = PBXGroup;
+			children = (
+				6CAADE5C276340D5002F1730 /* Resign */,
+				6CAADE5B276340D5002F1730 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6CAADE5B276340D5002F1730 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6CAADE5A276340D5002F1730 /* Resign.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6CAADE5C276340D5002F1730 /* Resign */ = {
+			isa = PBXGroup;
+			children = (
+				6CAADE5D276340D5002F1730 /* ResignApp.swift */,
+				6CAADE5F276340D5002F1730 /* ContentView.swift */,
+				6CAADE7327634167002F1730 /* ResignView */,
+				6CAADE6C276340EA002F1730 /* Utils */,
+				6CAADE61276340D6002F1730 /* Assets.xcassets */,
+				6CAADE66276340D6002F1730 /* Resign.entitlements */,
+				6CAADE63276340D6002F1730 /* Preview Content */,
+			);
+			path = Resign;
+			sourceTree = "<group>";
+		};
+		6CAADE63276340D6002F1730 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				6CAADE64276340D6002F1730 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6CAADE6C276340EA002F1730 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6CAADE6D276340FF002F1730 /* AlertInfo.swift */,
+				6CAADE6F2763411A002F1730 /* NeumorphicButtonStyle.swift */,
+				6CAADE712763412E002F1730 /* Shell.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		6CAADE7327634167002F1730 /* ResignView */ = {
+			isa = PBXGroup;
+			children = (
+				6CAADE84276342CD002F1730 /* ResignView.swift */,
+				6CAADE81276342A1002F1730 /* VM */,
+				6CAADE7427634175002F1730 /* Model */,
+			);
+			path = ResignView;
+			sourceTree = "<group>";
+		};
+		6CAADE7427634175002F1730 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6CAADE7527634186002F1730 /* ProvisioningProfile.swift */,
+				6CAADE77276341AD002F1730 /* PropertyListDictionaryValue.swift */,
+				6CAADE79276341BC002F1730 /* PropertyListProcessor.swift */,
+				6CAADE7B276341D0002F1730 /* CertificateWrapper.swift */,
+				6CAADE7D276341DD002F1730 /* ResignOutput.swift */,
+				6CAADE7F27634285002F1730 /* InfoPlist.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6CAADE81276342A1002F1730 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				6CAADE82276342AD002F1730 /* ResignViewModel.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6CAADE59276340D5002F1730 /* Resign */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CAADE69276340D6002F1730 /* Build configuration list for PBXNativeTarget "Resign" */;
+			buildPhases = (
+				6CAADE56276340D5002F1730 /* Sources */,
+				6CAADE57276340D5002F1730 /* Frameworks */,
+				6CAADE58276340D5002F1730 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Resign;
+			productName = Resign;
+			productReference = 6CAADE5A276340D5002F1730 /* Resign.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6CAADE52276340D5002F1730 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					6CAADE59276340D5002F1730 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = 6CAADE55276340D5002F1730 /* Build configuration list for PBXProject "Resign" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6CAADE51276340D5002F1730;
+			productRefGroup = 6CAADE5B276340D5002F1730 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6CAADE59276340D5002F1730 /* Resign */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6CAADE58276340D5002F1730 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CAADE65276340D6002F1730 /* Preview Assets.xcassets in Resources */,
+				6CAADE62276340D6002F1730 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6CAADE56276340D5002F1730 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CAADE83276342AD002F1730 /* ResignViewModel.swift in Sources */,
+				6CAADE85276342CD002F1730 /* ResignView.swift in Sources */,
+				6CAADE7627634186002F1730 /* ProvisioningProfile.swift in Sources */,
+				6CAADE7C276341D0002F1730 /* CertificateWrapper.swift in Sources */,
+				6CAADE7E276341DD002F1730 /* ResignOutput.swift in Sources */,
+				6CAADE60276340D5002F1730 /* ContentView.swift in Sources */,
+				6CAADE702763411A002F1730 /* NeumorphicButtonStyle.swift in Sources */,
+				6CAADE722763412E002F1730 /* Shell.swift in Sources */,
+				6CAADE5E276340D5002F1730 /* ResignApp.swift in Sources */,
+				6CAADE78276341AD002F1730 /* PropertyListDictionaryValue.swift in Sources */,
+				6CAADE6E276340FF002F1730 /* AlertInfo.swift in Sources */,
+				6CAADE7A276341BC002F1730 /* PropertyListProcessor.swift in Sources */,
+				6CAADE8027634285002F1730 /* InfoPlist.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6CAADE67276340D6002F1730 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6CAADE68276340D6002F1730 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		6CAADE6A276340D6002F1730 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Resign/Resign.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Resign/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenxi.Resign;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		6CAADE6B276340D6002F1730 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Resign/Resign.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Resign/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenxi.Resign;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6CAADE55276340D5002F1730 /* Build configuration list for PBXProject "Resign" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CAADE67276340D6002F1730 /* Debug */,
+				6CAADE68276340D6002F1730 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6CAADE69276340D6002F1730 /* Build configuration list for PBXNativeTarget "Resign" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CAADE6A276340D6002F1730 /* Debug */,
+				6CAADE6B276340D6002F1730 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6CAADE52276340D5002F1730 /* Project object */;
+}
