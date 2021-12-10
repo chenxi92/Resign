@@ -20,14 +20,12 @@ struct ResignView: View {
         VStack {
             inputForm
             HStack {
+                Text("Log Info")
+                    .font(.headline)
                 Spacer()
                 resignButton
             }
             VStack {
-                HStack {
-                    Text("Log Info")
-                    Spacer()
-                }
                 ScrollView {
                     ForEach(vm.logs, id: \.self) { message in
                         HStack {
@@ -61,8 +59,7 @@ struct ResignView: View {
                 .toggleStyle(.switch)
             
             if changeBuildVersion {
-                TextField("Display Name", text: $vm.displayName, prompt: Text("Change DisplayName?"))
-                
+                TextField("Display Name", text: $vm.displayName, prompt: Text("Change DisplayName?")) 
                 TextField("Build Version", text: $vm.buildVersion, prompt: Text("Change BuildVersion?"))
                 TextField("Shot Build Version", text: $vm.buildVersionShort, prompt: Text("Change BuildVersionShort?"))
             }

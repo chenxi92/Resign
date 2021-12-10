@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum PropertyListDictionaryValue: Hashable, Codable {
+public enum PropertyListDictionaryValue: Hashable, Equatable, Codable {
     case string(String)
     case bool(Bool)
     case array([PropertyListDictionaryValue])
