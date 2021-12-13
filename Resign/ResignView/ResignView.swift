@@ -66,8 +66,6 @@ struct ResignView: View {
         }
     }
     
-   
-    
     var ipaFileSelect: some View {
         HStack {
             TextField(text: $selectedIPAFilePath, prompt: Text("/path/to/xxx.ipa")) {
@@ -97,9 +95,12 @@ struct ResignView: View {
         }
         .onChange(of: vm.selectedProvisionFileUUID) { newValue in
             if let profile = vm.selectedProvisionFile(),
-            let certificate = profile.developerCertificates.first?.certificate,
-            let name = certificate.commmonName {
+               let certificate = profile.developerCertificates.first?.certificate,
+               let name = certificate.commmonName {
                 vm.selectedCertificateName = name
+            } else {
+                // not found associated certificate
+                vm.selectedCertificateName = ""
             }
         }
     }
@@ -129,7 +130,6 @@ struct ResignView: View {
         guard isValidParameter() else {
             return
         }
-        
         guard let output = output else {
             return
         }

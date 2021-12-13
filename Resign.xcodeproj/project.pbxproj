@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C9B825B2766EE3A0085075B /* FileManager+ProvisionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9B825A2766EE3A0085075B /* FileManager+ProvisionProfile.swift */; };
 		6CAADE5E276340D5002F1730 /* ResignApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAADE5D276340D5002F1730 /* ResignApp.swift */; };
 		6CAADE60276340D5002F1730 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAADE5F276340D5002F1730 /* ContentView.swift */; };
 		6CAADE62276340D6002F1730 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CAADE61276340D6002F1730 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C9B825A2766EE3A0085075B /* FileManager+ProvisionProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+ProvisionProfile.swift"; sourceTree = "<group>"; };
 		6CAADE5A276340D5002F1730 /* Resign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Resign.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CAADE5D276340D5002F1730 /* ResignApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResignApp.swift; sourceTree = "<group>"; };
 		6CAADE5F276340D5002F1730 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				6CAADE6F2763411A002F1730 /* NeumorphicButtonStyle.swift */,
 				6CAADE712763412E002F1730 /* Shell.swift */,
 				6CAADE8627635BA0002F1730 /* Decodable-Default.swift */,
+				6C9B825A2766EE3A0085075B /* FileManager+ProvisionProfile.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C9B825B2766EE3A0085075B /* FileManager+ProvisionProfile.swift in Sources */,
 				6CAADE8727635BA0002F1730 /* Decodable-Default.swift in Sources */,
 				6CAADE83276342AD002F1730 /* ResignViewModel.swift in Sources */,
 				6CAADE85276342CD002F1730 /* ResignView.swift in Sources */,

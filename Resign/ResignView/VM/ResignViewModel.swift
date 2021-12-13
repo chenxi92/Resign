@@ -27,40 +27,46 @@ public class ResignViewModel: ObservableObject {
     }
     
     public func loadCertificates() {
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            self?.loadCertificateAsync()
+        }
+    }
+    
+    private func loadCertificateAsync() {
         do {
             let data = try runShell("/usr/bin/security", args: ["find-identity", "-v", "-p", "codesigning"])!
-            let buffer = String(data: data, encoding: .utf8)!
-            buffer.enumerateLines { line, _ in
-                let components = line.components(separatedBy: "\"")
-                if components.count > 2 {
-                    let name = components[components.count - 2]
-                    if !self.certificateNames.contains(name) {
-                        self.certificateNames.append(name)
+            DispatchQueue.main.async {
+                let buffer = String(data: data, encoding: .utf8)!
+                buffer.enumerateLines { line, _ in
+                    let components = line.components(separatedBy: "\"")
+                    if components.count > 2 {
+                        let name = components[components.count - 2]
+                        if !self.certificateNames.contains(name) {
+                            self.certificateNames.append(name)
+                        }
                     }
                 }
+                self.addLog("load \(self.certificateNames.count) certificate name")
             }
-            addLog("load \(self.certificateNames.count) certificate name")
         } catch {
             addLog("load certificate error: \(error)")
         }
     }
     
     public func loadProvisioningFiles() {
-        let fileManager = FileManager.default
-        // Delete App Sandbox in Singing & Capabilities to access the perimision
-        let profilesDirectoryURL = fileManager.homeDirectoryForCurrentUser.appendingPathComponent("Library/MobileDevice/Provisioning Profiles")
-        let enumerator = fileManager.enumerator(at: profilesDirectoryURL,
-                                                includingPropertiesForKeys: [.nameKey],
-                                                options: .skipsHiddenFiles,
-                                                errorHandler: nil)
-        while let url = enumerator?.nextObject() as? URL {
-            if let profile = parseProvisioningFile(at: url) {
-                provisioningProfiles.append(profile)
+        DispatchQueue.global(qos: .userInitiated).async {
+            var availableProfiles: [ProvisioningProfile] = []
+            for url in  FileManager.default.availableProvisionProfile() {
+                if let profile = self.parseProvisioningFile(at: url) {
+                    availableProfiles.append(profile)
+                }
+            }
+            DispatchQueue.main.async { [weak self] in
+                self?.provisioningProfiles += availableProfiles
+                self?.provisioningProfiles.sort { $0.expirationDate > $1.expirationDate }
+                self?.addLog("load \(availableProfiles.count) provision profile.")
             }
         }
-        provisioningProfiles.sort { $0.expirationDate > $1.expirationDate }
-        
-        addLog("load \(provisioningProfiles.count) provision profile.")
     }
     
     public func sign(at filePath: String, output: ResignOutput) {
