@@ -14,7 +14,7 @@ struct ResignView: View {
     @State private var selectedIPAFilePath = ""
     @State private var alertInfo: AlertInfo?
     @State private var output: ResignOutput?
-    @State private var changeBuildVersion = false
+    @State private var isChangeInfoPlist = false
     
     var body: some View {
         VStack {
@@ -25,19 +25,8 @@ struct ResignView: View {
                 Spacer()
                 resignButton
             }
-            VStack {
-                ScrollView {
-                    ForEach(vm.logs, id: \.self) { message in
-                        HStack {
-                            Text(message)
-                                .foregroundColor(.secondary)
-                            
-                            Spacer()
-                        }
-                    }
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-            }
+            .padding(.vertical)
+            logView
         }
         .padding()
         .alert(item: $alertInfo) { info in
@@ -49,20 +38,46 @@ struct ResignView: View {
         }
     }
     
+    var logView: some View {
+        VStack {
+            ScrollView {
+                ForEach(vm.logs, id: \.self) { message in
+                    HStack {
+                        Text(message)
+                            .foregroundColor(.secondary)
+                        Spacer()
+                    }
+                }
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
+    }
+    
     var inputForm: some View {
         Form {
             ipaFileSelect
             certificateSelect
             provisionFileSelect
             
-            Toggle("Change Info.plist", isOn: $changeBuildVersion)
-                .toggleStyle(.switch)
-            
-            if changeBuildVersion {
-                TextField("Display Name", text: $vm.displayName, prompt: Text("Change DisplayName?")) 
-                TextField("Build Version", text: $vm.buildVersion, prompt: Text("Change BuildVersion?"))
-                TextField("Shot Build Version", text: $vm.buildVersionShort, prompt: Text("Change BuildVersionShort?"))
+            isChangeInfoPlistUI
+        }
+    }
+    
+    @ViewBuilder var isChangeInfoPlistUI: some View {
+        Toggle("Change Info.plist", isOn: $isChangeInfoPlist.animation(.spring()))
+            .toggleStyle(.switch)
+            .onChange(of: isChangeInfoPlist) { newValue in
+                if newValue == false {
+                    vm.displayName = ""
+                    vm.buildVersion = ""
+                    vm.buildVersionShort = ""
+                }
             }
+        
+        if isChangeInfoPlist {
+            TextField("Display Name", text: $vm.displayName, prompt: Text("Change DisplayName?"))
+            TextField("Build Version", text: $vm.buildVersion, prompt: Text("Change BuildVersion?"))
+            TextField("Shot Build Version", text: $vm.buildVersionShort, prompt: Text("Change BuildVersionShort?"))
         }
     }
     
