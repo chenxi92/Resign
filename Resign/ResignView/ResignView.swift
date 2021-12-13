@@ -15,6 +15,7 @@ struct ResignView: View {
     @State private var alertInfo: AlertInfo?
     @State private var output: ResignOutput?
     @State private var isChangeInfoPlist = false
+    @State private var isShowProvisionProfileDetail = false
     
     var body: some View {
         VStack {
@@ -32,6 +33,11 @@ struct ResignView: View {
         .alert(item: $alertInfo) { info in
             Alert(title: Text(info.title), message: Text(info.message))
         }
+        .sheet(isPresented: $isShowProvisionProfileDetail, content: {
+            if let profile = vm.selectedProvisionFile() {
+                ProvisionProfileView(profile: profile, isDismiss: $isShowProvisionProfileDetail)
+            }
+        })
         .task {
             vm.loadProvisioningFiles()
             vm.loadCertificates()
@@ -103,19 +109,30 @@ struct ResignView: View {
     }
     
     var provisionFileSelect: some View {
-        Picker("Provisioning Profile", selection: $vm.selectedProvisionFileUUID) {
-            ForEach(vm.provisioningProfiles) { profile in
-                Text(profile.displayName)
+        HStack(spacing: 0) {
+            Picker("Provisioning Profile", selection: $vm.selectedProvisionFileUUID) {
+                ForEach(vm.provisioningProfiles) { profile in
+                    Text(profile.displayName)
+                }
             }
-        }
-        .onChange(of: vm.selectedProvisionFileUUID) { newValue in
-            if let profile = vm.selectedProvisionFile(),
-               let certificate = profile.developerCertificates.first?.certificate,
-               let name = certificate.commmonName {
-                vm.selectedCertificateName = name
-            } else {
-                // not found associated certificate
-                vm.selectedCertificateName = ""
+            .onChange(of: vm.selectedProvisionFileUUID) { newValue in
+                if let profile = vm.selectedProvisionFile(),
+                   let certificate = profile.developerCertificates.first?.certificate,
+                   let name = certificate.commmonName {
+                    vm.selectedCertificateName = name
+                } else {
+                    // not found associated certificate
+                    vm.selectedCertificateName = ""
+                }
+            }
+            
+            if !vm.selectedCertificateName.isEmpty {
+                Button {
+                    isShowProvisionProfileDetail.toggle()
+                } label: {
+                    Image(systemName: "info.circle")
+                }
+                .clipShape(Circle())
             }
         }
     }

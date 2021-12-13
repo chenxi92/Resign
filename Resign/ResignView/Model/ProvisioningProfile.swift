@@ -71,7 +71,7 @@ extension ProvisioningProfile {
     public var bundleIdentifier: String {
         switch entitlements["application-identifier"] {
         case .string(let value):
-            let prefixIndex = value.index(value.startIndex, offsetBy: teamIdentifiers.count + 1)
+            let prefixIndex = value.index(value.startIndex, offsetBy: teamIdentifiers.first!.count + 1)
             return String(value[prefixIndex...])
         default:
             return ""
@@ -83,6 +83,12 @@ extension ProvisioningProfile {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let expiry = "\(dateFormatter.string(from: expirationDate))"
         return "\(name) (Expired: \(expiry))"
+    }
+    
+    var expirationDateString: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter.string(from: expirationDate)
     }
 }
 

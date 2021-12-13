@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15068C032768113D000BFE61 /* ProvisionProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15068C022768113D000BFE61 /* ProvisionProfileView.swift */; };
 		6C9B825B2766EE3A0085075B /* FileManager+ProvisionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9B825A2766EE3A0085075B /* FileManager+ProvisionProfile.swift */; };
 		6CAADE5E276340D5002F1730 /* ResignApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAADE5D276340D5002F1730 /* ResignApp.swift */; };
 		6CAADE60276340D5002F1730 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAADE5F276340D5002F1730 /* ContentView.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15068C022768113D000BFE61 /* ProvisionProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvisionProfileView.swift; sourceTree = "<group>"; };
 		6C9B825A2766EE3A0085075B /* FileManager+ProvisionProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+ProvisionProfile.swift"; sourceTree = "<group>"; };
 		6CAADE5A276340D5002F1730 /* Resign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Resign.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CAADE5D276340D5002F1730 /* ResignApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResignApp.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				6CAADE84276342CD002F1730 /* ResignView.swift */,
 				6CAADE81276342A1002F1730 /* VM */,
 				6CAADE7427634175002F1730 /* Model */,
+				15068C022768113D000BFE61 /* ProvisionProfileView.swift */,
 			);
 			path = ResignView;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				6CAADE60276340D5002F1730 /* ContentView.swift in Sources */,
 				6CAADE702763411A002F1730 /* NeumorphicButtonStyle.swift in Sources */,
 				6CAADE722763412E002F1730 /* Shell.swift in Sources */,
+				15068C032768113D000BFE61 /* ProvisionProfileView.swift in Sources */,
 				6CAADE5E276340D5002F1730 /* ResignApp.swift in Sources */,
 				6CAADE78276341AD002F1730 /* PropertyListDictionaryValue.swift in Sources */,
 				6CAADE6E276340FF002F1730 /* AlertInfo.swift in Sources */,
