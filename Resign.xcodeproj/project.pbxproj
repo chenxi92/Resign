@@ -61,6 +61,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15068C042768D62D000BFE61 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6CAADE84276342CD002F1730 /* ResignView.swift */,
+				15068C022768113D000BFE61 /* ProvisionProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		6CAADE51276340D5002F1730 = {
 			isa = PBXGroup;
 			children = (
@@ -114,10 +123,9 @@
 		6CAADE7327634167002F1730 /* ResignView */ = {
 			isa = PBXGroup;
 			children = (
-				6CAADE84276342CD002F1730 /* ResignView.swift */,
+				15068C042768D62D000BFE61 /* View */,
 				6CAADE81276342A1002F1730 /* VM */,
 				6CAADE7427634175002F1730 /* Model */,
-				15068C022768113D000BFE61 /* ProvisionProfileView.swift */,
 			);
 			path = ResignView;
 			sourceTree = "<group>";

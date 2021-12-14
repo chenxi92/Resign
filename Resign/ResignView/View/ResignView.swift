@@ -20,6 +20,7 @@ struct ResignView: View {
     var body: some View {
         VStack {
             inputForm
+            
             HStack {
                 Text("Log Info")
                     .font(.headline)
@@ -27,7 +28,8 @@ struct ResignView: View {
                 resignButton
             }
             .padding(.vertical)
-            logView
+            
+            logView            
         }
         .padding()
         .alert(item: $alertInfo) { info in
@@ -64,7 +66,7 @@ struct ResignView: View {
             ipaFileSelect
             certificateSelect
             provisionFileSelect
-            
+                .frame(maxHeight: 50)
             isChangeInfoPlistUI
         }
     }
@@ -111,8 +113,15 @@ struct ResignView: View {
     var provisionFileSelect: some View {
         HStack(spacing: 0) {
             Picker("Provisioning Profile", selection: $vm.selectedProvisionFileUUID) {
-                ForEach(vm.provisioningProfiles) { profile in
-                    Text(profile.displayName)
+                Section("Valid") {
+                    ForEach(vm.provisioningProfiles.filter {$0.expirationDate >= Date() }) { profile in
+                        Text(profile.displayName)
+                    }
+                }
+                Section("Invalid") {
+                    ForEach(vm.provisioningProfiles.filter {$0.expirationDate < Date() }) { profile in
+                        Text(profile.displayName)
+                    }
                 }
             }
             .onChange(of: vm.selectedProvisionFileUUID) { newValue in
@@ -131,6 +140,8 @@ struct ResignView: View {
                     isShowProvisionProfileDetail.toggle()
                 } label: {
                     Image(systemName: "info.circle")
+                        .font(.headline)
+                        .foregroundColor(.blue)
                 }
                 .clipShape(Circle())
             }

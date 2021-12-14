@@ -10,11 +10,17 @@ import SwiftUI
 struct PasteText: View {
     let tag: String
     let message: String
+    
     @State private var isShowAlert = false
     
     var body: some View {
         HStack {
-            Text(tag + ": " + message)
+            
+            Text(tag + ": ")
+                .font(.headline)
+            
+            Text(message)
+            
             Button {
                 let pasteBoard = NSPasteboard.general
                 pasteBoard.declareTypes([.string], owner: nil)
@@ -40,21 +46,28 @@ struct ProvisionProfileView: View {
         VStack {
             HStack {
                 Spacer()
+                
                 Text("Provision Profile Detail")
                     .font(.headline)
                 Spacer()
+                
                 Button {
                     isDismiss.toggle()
                 } label: {
                     Image(systemName: "xmark")
+                        .font(.headline.bold())
+                        .scaleEffect(1.5)
                 }
-
+                .clipShape(Circle())
+                .background(.clear)
             }
+            
             Form {
                 PasteText(tag: "Name", message: profile.name)
                 PasteText(tag: "UUID", message: profile.uuid)
                 PasteText(tag: "BundleID", message: profile.bundleIdentifier)
                 PasteText(tag: "Team", message: profile.teamName)
+                
                 let teamId = profile.teamIdentifiers.joined(separator: "")
                 PasteText(tag: "TeamID", message: teamId)
                 PasteText(tag: "Expiration", message: profile.expirationDateString)
@@ -62,27 +75,34 @@ struct ProvisionProfileView: View {
                 if let certificate = profile.developerCertificates.first?.certificate {
                     PasteText(tag: "Sign", message: certificate.commmonName ?? "")
                 }
-                if let devices = profile.provisionedDevices {
-                    VStack(spacing: 2) {
-                        HStack {
-                            Text("Device List:")
-                            Spacer()
-                        }
-                        ScrollView {
-                            ForEach(devices, id: \.self) { id in
-                                HStack {
-                                    Text(id)
-                                    Spacer()
-                                }
-                            }
-                        }
-                    }
-                    .frame(maxHeight: 200)
-                }
-    
+                
+                deviceList
             }
             .textSelection(.enabled)
         }
         .padding()
+    }
+    
+    @ViewBuilder
+    var deviceList: some View {
+        if let devices = profile.provisionedDevices {
+            VStack {
+                HStack {
+                    Text("Contain \(devices.count) Device")
+                        .font(.headline)
+                        .bold()
+                    Spacer()
+                }
+                ScrollView {
+                    ForEach(devices, id: \.self) { id in
+                        HStack {
+                            Text(id)
+                            Spacer()
+                        }
+                    }
+                }
+            }
+            .frame(maxHeight: 200)
+        }
     }
 }
