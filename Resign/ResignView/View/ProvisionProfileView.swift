@@ -29,12 +29,23 @@ struct PasteText: View {
                 Image(systemName: "doc.on.doc")
             }
         }
-        .alert("Success", isPresented: $isShowAlert) {
+        .sheet(isPresented: $isShowAlert, content: {
             ZStack {
-                RoundedRectangle(cornerRadius: 5)
-                Text("past successr")
+                Text("Success!")
+                    .font(.title3)
+                    .padding()
+                    .foregroundColor(Color.red)
             }
-        }
+            .background(.white)
+            .onTapGesture {
+                isShowAlert.toggle()
+            }
+            .onAppear {
+                Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
+                    isShowAlert.toggle()
+                }
+            }
+        })
     }
 }
 

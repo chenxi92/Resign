@@ -66,7 +66,6 @@ struct ResignView: View {
             ipaFileSelect
             certificateSelect
             provisionFileSelect
-                .frame(maxHeight: 50)
             isChangeInfoPlistUI
         }
     }
@@ -118,9 +117,11 @@ struct ResignView: View {
                         Text(profile.displayName)
                     }
                 }
+                
                 Section("Invalid") {
                     ForEach(vm.provisioningProfiles.filter {$0.expirationDate < Date() }) { profile in
                         Text(profile.displayName)
+                            .foregroundColor(.teal)
                     }
                 }
             }
