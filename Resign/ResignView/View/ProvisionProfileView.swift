@@ -34,7 +34,7 @@ struct PasteText: View {
                 Text("Success!")
                     .font(.title3)
                     .padding()
-                    .foregroundColor(Color.red)
+                    .foregroundColor(Color.blue)
             }
             .background(.white)
             .onTapGesture {
@@ -83,16 +83,16 @@ struct ProvisionProfileView: View {
                 PasteText(tag: "TeamID", message: teamId)
                 PasteText(tag: "Expiration", message: profile.expirationDateString)
                 
-                if let certificate = profile.developerCertificates.first?.certificate {
-                    PasteText(tag: "Sign", message: certificate.commmonName ?? "")
-                }
+                PasteText(tag: "Sign", message: profile.latestCertificate)
                 
                 deviceList
             }
             .textSelection(.enabled)
         }
         .padding()
+        .frame(minWidth: 450)
     }
+    
     
     @ViewBuilder
     var deviceList: some View {

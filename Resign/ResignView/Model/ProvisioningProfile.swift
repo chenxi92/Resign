@@ -90,6 +90,21 @@ extension ProvisioningProfile {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         return dateFormatter.string(from: expirationDate)
     }
+    
+    var latestCertificate: String {
+        let wrapper = developerCertificates
+            .filter { $0.certificate != nil }
+            .sorted { $0.certificate!.notValidAfter > $1.certificate!.notValidAfter }
+            .first
+        
+        guard let wrapper = wrapper,
+              let certificate = wrapper.certificate,
+              let name = certificate.commmonName
+        else {
+            return ""
+        }
+        return name
+    }
 }
 
 extension ProvisioningProfile: Identifiable {

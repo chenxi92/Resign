@@ -126,10 +126,8 @@ struct ResignView: View {
                 }
             }
             .onChange(of: vm.selectedProvisionFileUUID) { newValue in
-                if let profile = vm.selectedProvisionFile(),
-                   let certificate = profile.developerCertificates.first?.certificate,
-                   let name = certificate.commmonName {
-                    vm.selectedCertificateName = name
+                if let profile = vm.selectedProvisionFile() {
+                    vm.selectedCertificateName = profile.latestCertificate
                 } else {
                     // not found associated certificate
                     vm.selectedCertificateName = ""
