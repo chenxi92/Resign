@@ -160,6 +160,10 @@ struct ResignView: View {
         let panel = NSOpenPanel()
         panel.allowsMultipleSelection = false
         panel.canChooseDirectories = false
+        
+        if panel.runModal() == .cancel {
+            return
+        }
         if panel.runModal() == .OK, let url = panel.url, url.pathExtension == "ipa" {
             self.selectedIPAFilePath = url.path
             self.output = ResignOutput(from: url)
